@@ -1,0 +1,14 @@
+Begin3
+Title:          mscompress
+Version:        0.3
+Entered-date:   2000-04-05
+Description:    Microsoft "compress.exe/expand.exe" compatible (de)compressor
+Keywords:       Microsoft compress expand installation 
+Author:         mhi@penguin.cz (Martin Hinner)
+Maintained-by:  mhi@penguin.cz (Martin Hinner)
+Primary-site:   ftp.penguin.cz /pub/users/mhi/
+                4 kB  mscompress-0.3.tar.bz2
+                0.5 kB mscompress-0.3.lsm
+Platforms:      Most Unixes
+Copying-policy: GPL
+End

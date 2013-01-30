@@ -1,0 +1,25 @@
+#!/bin/sh
+# This simple script adds entry to /usr/lib/magic
+echo -n "Looking for magic file ... "
+
+if [ x$1 != x ] ; then
+	BUILDROOT=$1
+fi
+
+if [ -e "$BUILDROOT/usr/lib/magic" ] ; then
+ MFILE="$BUILDROOT/usr/lib/magic"
+elif [ -e "$BUILDROOT/etc/magic" ] ; then
+ MFILE="$BUILDROOT/etc/magic"
+else
+ echo " not found."
+ exit 0
+fi
+
+echo "$MFILE"
+
+if [ -z "`grep END_OF_MSCOMPRESS $MFILE`" ] ; then
+  cat magic.mscompress >>$MFILE
+else
+  echo Entry already present
+fi
+

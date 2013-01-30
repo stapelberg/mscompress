@@ -1,0 +1,35 @@
+This text was copied from the File Formats Encyclopaedia.
+
+							-- mhi
+
+------------------------------------------------------------------------
+Microsoft  ships  its files compressed  with COMPRESS.EXE, for expansion
+the  program  EXPAND.EXE  (how  original  ;)  )  is  used.  The  program
+EXPAND.EXE  is  available  with every copy  of  MS-DOS 5.0+, the program
+COMPRESS.EXE is available with several development kits, I found it with
+Borland   Pascal  7.0.  The  compression  seems   to  be  some  kind  of
+LZ-Compression,  as  the fully compatible?  LZCopy command under Windows
+can  decompress  the  same files. This  compression  feature seems to be
+available on all DOS-PCs.
+
+OFFSET              Count TYPE   Description
+0000h                   4 char   ID='SZDD'
+0004h                   1 long   reserved, always 3327F088h ?
+
+0008h                   1 byte   reserved
+0009h                   1 char   Last char of filename if file was compressed
+                                 into "FILENAME.EX_".
+000Ah                   1 long   Original file size
+
+------------------------------------------------------------------------
+
+At  least  with  the  version 6.22  of  MS-DOS,  Microsoft changed their
+compression  program to a new signature; The program seems no more to be
+able  to restore files to their original name, if it is not given on the
+command line.
+
+OFFSET              Count TYPE   Description
+0000h                   4 char   ID="KWAJ"
+0004h                   1 long   reserved, always 0D127F088h ?
+0008h                   1 long   reserved, always 00120003h ?
+000Ch                   1 word   reserved, always 01 ?
