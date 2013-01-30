@@ -220,7 +220,7 @@ main (int argc, char **argv)
 {
   int in, out;
   char *argv0;
-  char c;
+  int c;
   char name[0x100];
 
   argv0 = argv[0];
