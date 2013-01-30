@@ -9,10 +9,11 @@ Makefile.in
 /config.*
 /configure
 /depcomp
+/install-sh
 /missing
 /libtool
 /stamp-h1
-/mscompress
-/msexpand
+/src/mscompress
+/src/msexpand
 /test/test.new
 /test/test.txt_
