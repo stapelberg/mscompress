@@ -26,11 +26,7 @@
 #include <fcntl.h>
 #include <string.h>
 #include <stdint.h>
-#ifdef HAVE_GETOPT_H
 #include <getopt.h>
-#else
-#include "getopt.h"
-#endif
 
 extern char *version_string;
 
