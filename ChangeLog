@@ -3,6 +3,7 @@
   Use stdint.h, fixes file creation on amd64
   Fix argument parsing on ARM
   Switch to modern autotools
+  Remove obsolete .PU macro from manpages
 
 --0.3
   Autoconf
