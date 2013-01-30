@@ -24,6 +24,7 @@
 #include <unistd.h>
 #include <string.h>
 #include <fcntl.h>
+#include <stdint.h>
 #ifdef HAVE_GETOPT_H
 #include <getopt.h>
 #else
@@ -52,11 +53,11 @@ expand (int in, char *inname, int out, char *outname)
   int bits, ch, i, j, len, mask;
   unsigned char *buffer;
 
-  unsigned int magic1;
-  unsigned int magic2;
-  unsigned int magic3;
-  unsigned short reserved;
-  unsigned int filesize;
+  uint32_t magic1;
+  uint32_t magic2;
+  uint32_t magic3;
+  uint16_t reserved;
+  uint32_t filesize;
 
   if (read (in, &magic1, sizeof (magic1)) != sizeof (magic1))
     {
