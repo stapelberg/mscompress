@@ -303,7 +303,7 @@ usage (char *progname)
   exit (0);
 }
 
-void
+int
 main (int argc, char **argv)
 {
   int in, out;
@@ -322,7 +322,7 @@ main (int argc, char **argv)
 	case 'V':
 	  printf ("mscompress version %s "__DATE__ " \n",
 			version_string);
-	  exit (0);
+	  return 0;
 	default:
 	  usage (argv0);
 	}
@@ -351,7 +351,7 @@ main (int argc, char **argv)
       if (in < 0)
 	{
 	  perror (argv[0]);
-	  exit (1);
+	  return 1;
 	}
 
       strcpy (name, argv[0]);
@@ -361,7 +361,7 @@ main (int argc, char **argv)
       if (out < 0)
 	{
 	  perror (name);
-	  exit (1);
+	  return 1;
 	}
 
       compress (in, argv[0], out, name);
@@ -372,5 +372,5 @@ main (int argc, char **argv)
       argv++;
     }
 
-  exit (0);
+  return 0;
 }

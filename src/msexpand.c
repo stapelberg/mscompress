@@ -212,7 +212,7 @@ usage (char *progname)
   exit (0);
 }
 
-void
+int
 main (int argc, char **argv)
 {
   int in, out;
@@ -231,7 +231,7 @@ main (int argc, char **argv)
 	case 'V':
           printf ("msexpand version %s " __DATE__ "\n",
                         version_string);
-	  exit (0);
+	  return 0;
 	default:
 	  usage (argv0);
 	}
@@ -245,8 +245,8 @@ main (int argc, char **argv)
       if (isatty (STDIN_FILENO))
 	usage (argv0);
       if (expand (STDIN_FILENO, "STDIN", STDOUT_FILENO, "STDOUT") < 0)
-	exit (1);
-      exit (0);
+	return 1;
+      return 0;
     }
 
   while (argc)
@@ -263,7 +263,7 @@ main (int argc, char **argv)
       if (in < 0)
 	{
 	  perror (argv[0]);
-	  exit (1);
+	  return 1;
 	}
 
       strcpy (name, argv[0]);
@@ -273,7 +273,7 @@ main (int argc, char **argv)
       if (out < 0)
 	{
 	  perror (name);
-	  exit (1);
+	  return 1;
 	}
 
       expand (in, argv[0], out, name);
@@ -284,5 +284,5 @@ main (int argc, char **argv)
       argv++;
     }
 
-  exit (0);
+  return 0;
 }
