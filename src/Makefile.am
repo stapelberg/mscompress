@@ -1,3 +1,5 @@
+AM_CFLAGS = -Wall
+
 bin_PROGRAMS = mscompress msexpand
 
 mscompress_SOURCES = mscompress.c version.c
