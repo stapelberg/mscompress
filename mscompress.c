@@ -324,7 +324,7 @@ main (int argc, char **argv)
 	case 'h':
 	  usage (argv0);
 	case 'V':
-	  printf ("mscompress version %s (" BUILDHOST ") "__DATE__ " \n",
+	  printf ("mscompress version %s "__DATE__ " \n",
 			version_string);
 	  exit (0);
 	default:

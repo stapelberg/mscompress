@@ -8,6 +8,8 @@ Makefile.in
 /build-aux
 /config.*
 /configure
+/depcomp
+/missing
 /libtool
 /stamp-h1
 /mscompress
